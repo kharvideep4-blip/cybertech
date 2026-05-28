@@ -9,6 +9,7 @@ html, body {
   color: #fff;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
 }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; }
