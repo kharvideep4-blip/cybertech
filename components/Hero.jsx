@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import AutoCarousel from "./AutoCarousel"; 
 
 const serviceCards = [
   { id: 1, title: "DATA RECOVERY", color: "#00bcd4", border: "1.5px solid #00bcd4", glow: "0 0 16px rgba(0,188,212,0.45)", icon: <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="25" stroke="#00bcd4" strokeWidth="2" fill="none"/><rect x="20" y="24" width="20" height="14" rx="2" stroke="#00bcd4" strokeWidth="1.8" fill="none"/><circle cx="30" cy="31" r="4" stroke="#00bcd4" strokeWidth="1.6" fill="none"/><circle cx="30" cy="31" r="1.8" fill="#00bcd4"/><rect x="34" y="26" width="4" height="1.4" rx="0.5" fill="#00bcd4" opacity="0.7"/><rect x="34" y="29" width="4" height="1.4" rx="0.5" fill="#00bcd4" opacity="0.7"/><circle cx="48" cy="48" r="9" stroke="#00bcd4" strokeWidth="1.8" fill="rgba(0,188,212,0.1)"/><circle cx="48" cy="48" r="4.5" stroke="#00bcd4" strokeWidth="1.8" fill="none"/><line x1="51" y1="51" x2="55" y2="55" stroke="#00bcd4" strokeWidth="2.2" strokeLinecap="round"/></svg> },
@@ -20,13 +21,13 @@ const trustItems = [
 export default function Hero() {
   return (
     <section style={{ backgroundImage: "url('/images/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "center", minHeight: 600, padding: "48px 40px" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 400px", gap: "60px", alignItems: "start" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 650px", gap: "40px", alignItems: "start" }}>
         
-        {/* Left Side: Text and Grid */}
+        {/* Left Side */}
         <div>
           <h1 style={{ color: "#fff", fontFamily: "'Arial Black', Impact, sans-serif", fontWeight: 900, lineHeight: 1.08, margin: "0 0 12px", textTransform: "uppercase", fontSize: "clamp(24px, 2.6vw, 38px)" }}>
             DIGITAL INFRASTRUCTURE<br/>
-            <span style={{ background: "linear-gradient(90deg, #ffee58, #fdd835)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>&amp;DATA SOLUTIONS</span>
+            <span style={{ background: "linear-gradient(90deg, #ffee58, #fdd835)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>&amp;DATA SOLUTIONS</span>
           </h1>
           <p style={{ color: "rgba(255,255,255,0.80)", fontSize: 14, lineHeight: 1.7, margin: "0 0 32px" }}>
             End-to-end data, security, and infrastructure solutions<br/> to protect, recover, and empower your business.
@@ -41,9 +42,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Side: Trust Table (Horizontal Layout) */}
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", height: "100%", paddingBottom: "10px" }}>
-          <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", padding: "20px", border: "1px solid #1e88e5", borderRadius: 12, background: "rgba(4,12,35,0.82)" }}>
+        {/* Right Side */}
+        <div style={{ display: "grid", gridTemplateRows: "1fr auto", gap: "20px", height: "100%" }}>
+          <AutoCarousel />
+          <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", padding: "20px", border: "1px solid #1e88e5", borderRadius: 12, background: "rgba(4,12,35,0.82)", alignSelf: "end" }}>
             {trustItems.map((item) => (
               <div key={item.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 8 }}>
                 <div style={{ transform: "scale(0.7)" }}>{item.icon}</div>
@@ -55,7 +57,6 @@ export default function Hero() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
