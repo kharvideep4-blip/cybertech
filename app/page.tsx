@@ -13,7 +13,6 @@ export default function Home() {
       <Hero />
       <ServiceCards />
       <Features />
-      <TeamSection />
       <ClientGrid />
       <Footer />
     </main>

@@ -142,7 +142,7 @@ export default function ServiceCards() {
           max-width: 1280px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-template-columns: repeat(3, 1fr);
           gap: 24px;
         }
         .scard {
@@ -169,7 +169,7 @@ export default function ServiceCards() {
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
-          overflow: hidden; /* Fixes icon breakout */
+          overflow: hidden;
           transition: transform 0.4s ease;
         }
         .scard:hover .scard-icon-wrap {
@@ -230,7 +230,15 @@ export default function ServiceCards() {
         .scard-btn:hover .btn-arrow {
           transform: translateX(3px);
         }
+        @media (max-width: 900px) {
+          .services-inner {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
         @media (max-width: 480px) {
+          .services-inner {
+            grid-template-columns: 1fr;
+          }
           .scard {
             flex-direction: column;
             align-items: center;
